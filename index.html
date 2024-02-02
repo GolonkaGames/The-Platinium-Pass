@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Platinium Pass</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            font-family: "Courier New", monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 20px;
+            color: #00FF00;
+        }
+
+        h1, label, p {
+            text-align: left;
+            font-size: 24px; 
+            margin-bottom: 10px;
+            image-rendering: pixelated;
+        }
+
+        #specialText {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            font-family: "Courier New", monospace;
+            font-size: 16px; 
+            color: #00FF00; 
+            caret-color: #00FF00; 
+            background-color: transparent;
+            border: 1px solid #000; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to The Platinium Pass</h1>
+
+    <label for="accessCode">Enter the special code:</label>
+    <input type="text" id="accessCode" oninput="updateBorderColor(this)" onkeydown="checkEnterKey(event)">
+
+    <div id="specialText">
+        <p>AdtMLWC</p>
+    </div>
+
+    <script>
+        function checkEnterKey(event) {
+            if (event.key === 'Enter') {
+                var enteredCode = document.getElementById('accessCode').value;
+
+                
+                if (enteredCode.toLowerCase() === 'dummies') {
+                    document.getElementById('specialText').style.display = 'block';
+                } else {
+                    alert('Incorrect code. Try again.');
+                }
+            }
+        }
+
+        function updateBorderColor(input) {
+            input.style.borderColor = '#000';
+        }
+    </script>
+
+</body>
+</html>
