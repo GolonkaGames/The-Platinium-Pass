@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            background-image: url("The Platinium Pass.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1, label, p {
+            color: white;
+            text-align: center;
+        }
+
+        #specialText {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input, button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to The Platinium Pass</h1>
+    <h1>They are here.</h1>
+
+    <label for="accessCode">Enter the special code:</label>
+    <input type="text" id="accessCode">
+    <button onclick="checkAccess()">Submit</button>
+
+    <div id="specialText">
+        <p>This is the special text that you can access with the correct code.</p>
+    </div>
+
+    <script>
+        function checkAccess() {
+            var enteredCode = document.getElementById('accessCode').value;
+
+            // Check if the entered code is 'Dummies'
+            if (enteredCode.toLowerCase() === 'dummies') {
+                document.getElementById('specialText').style.display = 'block';
+            } else {
+                alert('Incorrect code. Try again.');
+            }
+        }
+    </script>
+
+</body>
+</html>
